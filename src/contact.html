@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	//= partials/head.html
+	<title>Document</title>
+
+</head>
+<body>
+	//= partials/header.html
+
+	<!-- Page content -->
+	<main>
+		<section class="cover d-flex">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 offset-lg-2 text-center">
+						<h1 class="cover__title cover__title--inner mb-4">contact us</h1>
+						<nav aria-label="breadcrumb">
+						  <ol class="breadcrumb justify-content-center">
+						    <li class="breadcrumb-item"><a href="inedx.html">Home</a></li>
+						    <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+						  </ol>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<div>
+			<section class="block">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 ">
+							<form action="" method="POST" class="needs-validation form-contacts" novalidate>
+								<div class="row">
+									<div class="col-md-6 mb-4">
+										<input type="text" name="name" class="form-control" placeholder="your name" required>
+									</div>
+									<div class="col-md-6 mb-4">
+										<input type="email" name="email" class="form-control" placeholder="your email" required>
+									</div>
+									<div class="col-md-12 mb-4"> 
+										<input type="text" name="object" class="form-control" placeholder="object" required></div>
+									<div class="col-md-12 mb-4">
+										<textarea name="message" class="form-control" placeholder="message" required rows="10"></textarea>
+									</div>
+									<div class="col-md-12">
+										<button class="btn btn-primary mb-5" type="submit">send</button>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="col-md-6 ">
+							<div class="map"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			
+		</div>
+
+	</main>
+
+	//= partials/footer.html
+
+	<div class="modal" tabindex="-1" role="dialog" id="mymodel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title">Request Accepted!</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam labore ullam molestias doloremque! Odit, temporibus.</p>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	//= partials/scripts.html
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDXUTMWWK4qZwIsU3AudvJ9UC48L9IdA8&callback=initMap"
+  type="text/javascript"></script>
+
+  <script>
+  	function initMap() {
+
+		var myLatLng = {
+				lat: 47.1013653, 
+				lng: 37.549361
+			};
+
+		var map = new google.maps.Map(document.querySelector('.map'), {
+				center: myLatLng,
+				zoom: 16,
+				styles: [
+				  {
+				    "elementType": "geometry",
+				    "stylers": [
+				      {
+				        "color": "#f5f5f5"
+				      }
+				    ]
+				  },
+				  {
+				    "elementType": "labels.icon",
+				    "stylers": [
+				      {
+				        "visibility": "off"
+				      }
+				    ]
+				  },
+				  {
+				    "elementType": "labels.text.fill",
+				    "stylers": [
+				      {
+				        "color": "#616161"
+				      }
+				    ]
+				  },
+				  {
+				    "elementType": "labels.text.stroke",
+				    "stylers": [
+				      {
+				        "color": "#f5f5f5"
+				      }
+				    ]
+				  },
+				  {
+				    "featureType": "administrative.land_parcel",
+				    "elementType": "labels.text.fill",
+				    "stylers": [
+				      {
+				        "color": "#bdbdbd"
+				      }
+				    ]
+				  },
+				  {
+				    "featureType": "poi",
+				    "elementType": "geometry",
+				    "stylers": [
+				      {
+				        "color": "#eeeeee"
+				      }
+				    ]
+				  },
+				  {
+				    "featureType": "poi",
+				    "elementType": "labels.text.fill",
+				    "stylers": [
+				      {
+				        "color": "#757575"
+				      }
+				    ]
+				  },
+				  {
+				    "featureType": "poi.park",
+				    "elementType": "geometry",
+				    "stylers": [
+				      {
+				        "color": "#e5e5e5"
+				      }
+				    ]
+				  },
+				  {
+				    "featureType": "poi.park",
+				    "elementType": "labels.text.fill",
+				    "stylers": [
+				      {
+				        "color": "#9e9e9e"
+				      }
+				    ]
+				  },
+				  {
+				    "featureType": "road",
+				    "elementType": "geometry",
+				    "stylers": [
+				      {
+				        "color": "#ffffff"
+				      }
+				    ]
+				  },
+				  {
+				    "featureType": "road.arterial",
+				    "elementType": "labels.text.fill",
+				    "stylers": [
+				      {
+				        "color": "#757575"
+				      }
+				    ]
+				  },
+				  {
+				    "featureType": "road.highway",
+				    "elementType": "geometry",
+				    "stylers": [
+				      {
+				        "color": "#dadada"
+				      }
+				    ]
+				  },
+				  {
+				    "featureType": "road.highway",
+				    "elementType": "labels.text.fill",
+				    "stylers": [
+				      {
+				        "color": "#616161"
+				      }
+				    ]
+				  },
+				  {
+				    "featureType": "road.local",
+				    "elementType": "labels.text.fill",
+				    "stylers": [
+				      {
+				        "color": "#9e9e9e"
+				      }
+				    ]
+				  },
+				  {
+				    "featureType": "transit.line",
+				    "elementType": "geometry",
+				    "stylers": [
+				      {
+				        "color": "#e5e5e5"
+				      }
+				    ]
+				  },
+				  {
+				    "featureType": "transit.station",
+				    "elementType": "geometry",
+				    "stylers": [
+				      {
+				        "color": "#eeeeee"
+				      }
+				    ]
+				  },
+				  {
+				    "featureType": "water",
+				    "elementType": "geometry",
+				    "stylers": [
+				      {
+				        "color": "#c9c9c9"
+				      }
+				    ]
+				  },
+				  {
+				    "featureType": "water",
+				    "elementType": "labels.text.fill",
+				    "stylers": [
+				      {
+				        "color": "#9e9e9e"
+				      }
+				    ]
+				  }
+				]
+		})
+	}
+  </script>
+</body>
+</html>
